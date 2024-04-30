@@ -1,6 +1,15 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import { TopNav } from "./_components/topNav";
+import { ClerkProvider } from "@clerk/nextjs";
+import { IBM_Plex_Sans } from 'next/font/google'
+
+const plex = IBM_Plex_Sans({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-plex-sans',
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,8 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ClerkProvider>
+
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`flex flex-col`}>
+      <TopNav /> 
+        {children}</body>
     </html>
+    </ClerkProvider>
   );
 }

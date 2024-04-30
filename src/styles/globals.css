@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    font-family: "IBM Plex Sans", sans-serif;
+
+}
+.top-nav{
+    background-color: #323238;
+    color: #EAEAFD;
+}
+html {
+    font-family: var(--font-plex-sans);
+  }
